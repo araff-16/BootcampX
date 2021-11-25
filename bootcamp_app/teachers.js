@@ -31,7 +31,7 @@ ON assistance_requests.student_id = students.id
 INNER JOIN cohorts
 ON students.cohort_id = cohorts.id
 WHERE cohorts.name = $1
-ORDER BY teachers.name;`, [process.argv[2]])
+ORDER BY teachers.name;`, args)
 .then(res => {
   console.log(res.rows)
 }).catch(err => console.error('query error', err.stack))
